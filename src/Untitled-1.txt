@@ -1,0 +1,139 @@
+    common
+
+windowWidth: 489
+windowHeight: 917
+pixelRatio: 1
+screenWidth: 1920
+screenHeight: 1080
+language: "zh-CN"
+statusBarHeight: 0
+system: "Other 0"
+platform: "other"
+model: undefined
+
+
+
+
+    h5
+
+windowTop: 0
+windowBottom: 0
+windowWidth: 489
+windowHeight: 917
+pixelRatio: 1
+screenWidth: 1920
+screenHeight: 1080
+language: "zh-CN"
+statusBarHeight: 0
+system: "Other 0"
+platform: "other"
+model: undefined
+safeArea:
+left: 0
+right: 489
+top: 0
+bottom: 917
+width: 489
+height: 917
+errMsg: "getSystemInfo:ok"
+
+
+
+    wechat
+
+SDKVersion: "2.9.2"
+batteryLevel: 100
+benchmarkLevel: 1
+brand: "devtools"
+devicePixelRatio: 2
+errMsg: "getSystemInfo:ok"
+fontSizeSetting: 16
+language: "zh"
+model: "iPhone 6/7/8"
+pixelRatio: 2
+platform: "devtools"
+safeArea:
+bottom: 667
+height: 647
+left: 0
+right: 375
+top: 20
+width: 375
+screenHeight: 667
+screenWidth: 375
+statusBarHeight: 20
+system: "iOS 10.0.1"
+version: "7.0.4"
+windowHeight: 603
+windowWidth: 375
+
+
+
+
+    alipay
+
+app:"alipay"
+brand:"IPHONE"
+currentBattery:"100%"
+errMsg:"getSystemInfo:ok"
+fontSizeSetting:16
+language:"zh-Hans"
+model:"iPhone 6"
+pixelRatio:2
+platform:"ios"
+screenHeight:667
+screenWidth:375
+statusBarHeight:20
+storage:"62.42G"
+system:"6.0.1"
+titleBarHeight:44
+version:"10.1.55"
+windowHeight:603
+windowWidth:375
+
+
+
+
+    bytedance
+
+SDKUpdateVersion: "1.46.0.5"
+SDKVersion: "1.46.0"
+appName: "devtools"
+batteryLevel: 100
+brand: "devtools"
+errMsg: "getSystemInfo:ok"
+fontSizeSetting: 16
+language: "zh_CN"
+model: "iPhone 6"
+nativeSDKVersion: "2.16.0"
+pixelRatio: 2
+platform: "devtools"
+screenHeight: 667
+screenWidth: 375
+statusBarHeight: 20
+system: "iOS 10.0.1"
+version: "6.6.3"
+wifiSignal: 4
+windowHeight: 603
+windowWidth: 375
+
+
+
+    qq
+
+AppPlatform: "qq"
+SDKBuild: "00002"
+SDKVersion: "1.10.1"
+brand: "devtools"
+fontSizeSetting: 16
+language: "zh_CN"
+model: "iPhone 6"
+pixelRatio: 2
+platform: "devtools"
+screenHeight: 667
+screenWidth: 375
+statusBarHeight: 20
+system: "iOS 12.0.1"
+version: "6.6.3"
+windowHeight: 603
+windowWidth: 375
