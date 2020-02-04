@@ -1,11 +1,8 @@
 {
     "name": "@pocky/uni-monitor",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "main": "./dist/main.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "ts": "tsc",
-        "ts:watch": "tsc -w",
         "eslint": "eslint --fix --ext .ts src/",
         "prettier": "prettier --write -c src/**"
     },

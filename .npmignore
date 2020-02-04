@@ -1,6 +1,8 @@
 node_modules/
 src/
 test/
+unpackage/
+preview/
 
 .eslintrc.js
 .prettierrc.js
