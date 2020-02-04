@@ -7,5 +7,8 @@ Vue.use(uniPockyMonitor.install, {
     system: '/system',
     location: '/location',
     router: '/router',
-    view: '/view'
+    view: '/view',
+    request(config) {
+        return config;
+    }
 });

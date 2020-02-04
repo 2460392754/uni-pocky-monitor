@@ -9,44 +9,45 @@ import ConfigInstance from './core/config';
 import { IOpts } from './interface';
 import { VueConstructor } from 'vue';
 
-const install = function(vue: VueConstructor, opts: IOpts) {
+export const install = function(vue: VueConstructor, opts: IOpts) {
+    const http = request(opts);
+
     const actions = {
         // 页面加载性能数据
         performance(url: string) {
             const params = info.performance();
 
-            request.get(url, { params });
+            http.get(url, { params });
         },
 
         // 设备或浏览器信息
         async system(url: string) {
             const params = await info.system();
 
-            request.get(url, { params });
+            http.get(url, { params });
         },
 
         // 当前设备所在的地理位置
         async location(url: string) {
             const params = await info.location();
 
-            request.get(url, { params });
+            http.get(url, { params });
         },
 
         // 页面路由更新记录
         async router(url: string) {
             vue.mixin({
                 onLoad() {
-                    console.log('router');
                     const params = info.router();
 
-                    request.get(url, { params });
+                    http.get(url, { params });
                 }
             });
         },
 
         // 页面浏览记录
         view(url: string) {
-            request.get(url);
+            http.get(url);
         }
     };
 

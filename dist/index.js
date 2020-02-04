@@ -5,36 +5,36 @@
 import request from './core/request';
 import info from './core/info';
 import ConfigInstance from './core/config';
-const install = function (vue, opts) {
+export const install = function (vue, opts) {
+    const http = request(opts);
     const actions = {
         // 页面加载性能数据
         performance(url) {
             const params = info.performance();
-            request.get(url, { params });
+            http.get(url, { params });
         },
         // 设备或浏览器信息
         async system(url) {
             const params = await info.system();
-            request.get(url, { params });
+            http.get(url, { params });
         },
         // 当前设备所在的地理位置
         async location(url) {
             const params = await info.location();
-            request.get(url, { params });
+            http.get(url, { params });
         },
         // 页面路由更新记录
         async router(url) {
             vue.mixin({
                 onLoad() {
-                    console.log('router');
                     const params = info.router();
-                    request.get(url, { params });
+                    http.get(url, { params });
                 }
             });
         },
         // 页面浏览记录
         view(url) {
-            request.get(url);
+            http.get(url);
         }
     };
     (function () {

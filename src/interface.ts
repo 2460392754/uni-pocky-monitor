@@ -1,7 +1,4 @@
-export interface IOpts {
-    /** 监控信息接收的基地址 */
-    BASE_URL: string;
-
+export interface IOpts extends IRequestOpts {
     /** 性能监控 */
     performance?: string;
 
@@ -16,4 +13,15 @@ export interface IOpts {
 
     /** 页面路由 */
     view?: string;
+}
+
+export interface IRequestOpts {
+    /** 监控信息接收的基地址 */
+    BASE_URL: string;
+
+    /** 请求拦截器 */
+    request?: Function;
+
+    /** 响应拦截器 */
+    response?: Function;
 }
