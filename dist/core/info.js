@@ -6,12 +6,11 @@ export default {
                 success(res) {
                     // console.log('');
                     // console.log('ua');
-                    console.log(res);
+                    // console.log(res);
                     resolve(res);
                 },
                 fail(err) {
-                    // reject(new Error('此设备不支持获取系统参数 ' + err));
-                    handleError('此设备不支持获取系统参数 ' + err);
+                    handleError('此设备不支持获取系统参数 ' + JSON.stringify(err));
                 }
             });
         });
@@ -36,14 +35,12 @@ export default {
                     resolve(data);
                 },
                 fail(err) {
-                    // reject(new Error('此设备不支持获取地理位置' + err));
-                    handleError('此设备不支持获取地理位置 ' + err);
+                    handleError('此设备不支持获取地理位置 ' + JSON.stringify(err));
                 }
             });
         });
     },
     performance() {
-        console.log(performance);
         if (!performance) {
             handleError('浏览器不支持 performance 接口 ');
         }
@@ -75,6 +72,13 @@ export default {
         // console.log(data);
         return data;
     },
-    pv() { },
-    cv() { }
+    router() {
+        const pages = getCurrentPages();
+        const path = pages[pages.length - 1].route;
+        // console.log('');
+        // console.log('route');
+        // console.log(path);
+        return { path };
+    },
+    view() { }
 };

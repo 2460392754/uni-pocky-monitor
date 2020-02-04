@@ -1,5 +1,9 @@
 {
-    "pages": [{ "path": "preview/index" }],
+    "pages": [
+        { "path": "preview/views/index" },
+        { "path": "preview/views/test-1" },
+        { "path": "preview/views/test-2" }
+    ],
     "globalStyle": {
         "navigationBarTextStyle": "black",
         "navigationBarTitleText": "uni-app",

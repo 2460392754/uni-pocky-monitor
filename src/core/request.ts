@@ -14,7 +14,7 @@ http.interceptors.request.use((config) => {
 });
 
 http.interceptors.request.use((config) => {
-    for (const [key, value] of Object.entries(config.params)) {
+    for (const [key, value] of Object.entries(config.params || {})) {
         config.params[key] = value === null ? '' : value;
     }
 

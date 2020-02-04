@@ -1,32 +1,19 @@
-// export interface IOpts {
-//     /** 性能监控 */
-//     pre: boolean;
-
-//     /** js错误监控 */
-//     jsError: boolean;
-
-//     /** 上报的信息是否压缩 */
-//     compress: boolean;
-
-//     /** 业务系统ID */
-//     appId: string;
-
-//     /** 业务系统ID的名称 */
-//     appName: string;
-
-//     /** 监控信息接收的地址 */
-//     url: string;
-// }
 export interface IOpts {
-    /** 监控信息接收的地址 */
-    url: string;
+    /** 监控信息接收的基地址 */
+    BASE_URL: string;
 
     /** 性能监控 */
-    preId?: number | string;
+    performance?: string;
 
-    /** 浏览器参数 */
-    uaId?: number | string;
+    /** 设备或浏览器信息 */
+    system?: string;
 
     /** 地理位置 */
-    locationId?: number | string;
+    location?: string;
+
+    /** 页面路由 */
+    router?: string;
+
+    /** 页面路由 */
+    view?: string;
 }

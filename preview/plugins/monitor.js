@@ -1,10 +1,11 @@
 import uniPockyMonitor from '../../dist';
+import Vue from 'vue';
 
-const monitor = new uniPockyMonitor({
-    url: 'http://localhost:3000/monitor',
-    preId: 1,
-    uaId: 2,
-    locationId: 3
+Vue.use(uniPockyMonitor.install, {
+    BASE_URL: 'http://localhost:3000/monitor',
+    performance: '/performance',
+    system: '/system',
+    location: '/location',
+    router: '/router',
+    view: '/view'
 });
-
-monitor.start();

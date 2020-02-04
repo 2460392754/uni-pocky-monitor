@@ -3,49 +3,64 @@
 // https://github.com/unclepan/zui-monitor/tree/dev
 // https://mta.qq.com/docs/wechat_mini_program_api.html
 
-import config from './core/config';
 import request from './core/request';
 import info from './core/info';
+import ConfigInstance from './core/config';
 import { IOpts } from './interface';
+import { VueConstructor } from 'vue';
 
-export default class {
-    private data: IOpts;
+const install = function(vue: VueConstructor, opts: IOpts) {
+    const actions = {
+        // 页面加载性能数据
+        performance(url: string) {
+            const params = info.performance();
 
-    constructor(opts: IOpts) {
-        this._setOptions(opts);
-    }
+            request.get(url, { params });
+        },
 
-    start() {
-        this._performance();
-        this._location();
-        this._system();
-    }
+        // 设备或浏览器信息
+        async system(url: string) {
+            const params = await info.system();
 
-    /** 设置参数 */
-    private _setOptions(inputOpts: IOpts) {
-        const defaultOpts: IOpts = {
-            url: ''
-        };
+            request.get(url, { params });
+        },
 
-        this.data = { ...defaultOpts, ...inputOpts };
-        config.url = this.data.url;
-    }
+        // 当前设备所在的地理位置
+        async location(url: string) {
+            const params = await info.location();
 
-    private _performance() {
-        const result = info.performance();
+            request.get(url, { params });
+        },
 
-        request.get('/performance', { params: result });
-    }
+        // 页面路由更新记录
+        async router(url: string) {
+            vue.mixin({
+                onLoad() {
+                    console.log('router');
+                    const params = info.router();
 
-    private async _system() {
-        const result = await info.system();
+                    request.get(url, { params });
+                }
+            });
+        },
 
-        request.get('/system', { params: result });
-    }
+        // 页面浏览记录
+        view(url: string) {
+            request.get(url);
+        }
+    };
 
-    private async _location() {
-        const result = await info.location();
+    (function() {
+        ConfigInstance.url = opts.BASE_URL;
 
-        request.get('/location', { params: result });
-    }
-}
+        for (const [key, value] of Object.entries(opts || {})) {
+            if (actions.hasOwnProperty(key)) {
+                actions[key](value);
+            }
+        }
+    })();
+};
+
+export default {
+    install
+};

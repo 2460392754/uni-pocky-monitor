@@ -13,7 +13,9 @@ declare const _default: {
         unloadEvent: number;
         connect: number;
     };
-    pv(): void;
-    cv(): void;
+    router(): {
+        path: string;
+    };
+    view(): void;
 };
 export default _default;

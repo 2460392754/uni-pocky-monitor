@@ -1,10 +1,14 @@
 export interface IOpts {
-    /** 监控信息接收的地址 */
-    url: string;
+    /** 监控信息接收的基地址 */
+    BASE_URL: string;
     /** 性能监控 */
-    preId?: number | string;
-    /** 浏览器参数 */
-    uaId?: number | string;
+    performance?: string;
+    /** 设备或浏览器信息 */
+    system?: string;
     /** 地理位置 */
-    locationId?: number | string;
+    location?: string;
+    /** 页面路由 */
+    router?: string;
+    /** 页面路由 */
+    view?: string;
 }
