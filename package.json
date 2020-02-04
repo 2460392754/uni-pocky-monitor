@@ -21,8 +21,13 @@
         "@pocky/uni-request": "^1.0.4",
         "uuid-js": "^0.7.5"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/2460392754/uni-pocky-monitor.git"
+    },
+    "homepage": "https://github.com/2460392754/uni-pocky-monitor#readme",
     "keywords": [],
-    "author": "",
+    "author": "pocky",
     "license": "ISC",
     "description": ""
 }
