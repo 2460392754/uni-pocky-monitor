@@ -1,7 +1,7 @@
 {
     "name": "@pocky/uni-monitor",
-    "version": "1.0.2",
-    "main": "./dist/main.js",
+    "version": "1.0.3",
+    "main": "./dist/index.js",
     "scripts": {
         "eslint": "eslint --fix --ext .ts src/",
         "prettier": "prettier --write -c src/**"
